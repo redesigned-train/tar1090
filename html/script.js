@@ -3844,6 +3844,7 @@ function refreshHighlighted() {
     infoBox.css("top", infoBoxTop);
 
     jQuery('#highlighted_callsign').text(highlighted.name);
+    jQuery('#highlighted_callsign').attr('href', 'https://flightradar24.com/' + highlighted.name);
 
     if (highlighted.icaoType !== null) {
         jQuery('#highlighted_icaotype').text(highlighted.icaoType);
