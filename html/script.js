@@ -3437,8 +3437,7 @@ function refreshSelected() {
 
     refreshPhoto(selected);
 
-    jQuery('#selected_callsign').updateText(selected.name);
-    jQuery('#selected_callsign').attr('href', 'https://flightradar24.com/' + selected.name);
+    jQuery('#selected_callsign').html('<a href="https://flightradar24.com/' + selected.name + '">' + selected.name + '</a>');
 
     if (showTrace) {
         if (selected.position_time) {
