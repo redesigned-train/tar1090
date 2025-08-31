@@ -341,7 +341,7 @@ function createBaseLayers() {
             },
         }));
         world.push(new ol.mapboxStyle.MapboxVectorLayer({
-            styleUrl: 'mapbox://styles/maria-adsb/cmezft9dn00m601qw5ffp1ocw',
+            styleUrl: 'mapbox://styles/maria-adsb/cmezft9dn00m601qw5ffp1ocw/draft',
             accessToken: MapboxAPIKey,
             properties: {
                 name: 'mapbox_redesigned_train',
