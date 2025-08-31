@@ -340,6 +340,15 @@ function createBaseLayers() {
                 type: 'base',
             },
         }));
+        world.push(new ol.mapboxStyle.MapboxVectorLayer({
+            styleUrl: 'mapbox://styles/mapbox/satellite-streets-v12',
+            accessToken: MapboxAPIKey,
+            properties: {
+                name: 'mapbox_satellite_streets',
+                title: 'Mapbox Satellite Streets',
+                type: 'base',
+            },
+        }));
     }
 
     if (1) {
