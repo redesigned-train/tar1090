@@ -341,11 +341,11 @@ function createBaseLayers() {
             },
         }));
         world.push(new ol.mapboxStyle.MapboxVectorLayer({
-            styleUrl: 'mapbox://styles/mapbox/satellite-streets-v12',
+            styleUrl: 'apbox://styles/mapbox/satellite-v9',
             accessToken: MapboxAPIKey,
             properties: {
-                name: 'mapbox_satellite_streets',
-                title: 'Mapbox Satellite Streets',
+                name: 'mapbox_satellite',
+                title: 'Mapbox Satellite',
                 type: 'base',
             },
         }));
