@@ -341,7 +341,7 @@ function createBaseLayers() {
             },
         }));
         world.push(new ol.mapboxStyle.MapboxVectorLayer({
-            styleUrl: 'mapbox://styles/mapbox/satellite-v7',
+            styleUrl: 'mapbox://styles/mapbox/satellite-v8',
             accessToken: MapboxAPIKey,
             properties: {
                 name: 'mapbox_satellite',
