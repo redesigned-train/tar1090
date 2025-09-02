@@ -341,7 +341,7 @@ function createBaseLayers() {
             },
         }));
         world.push(new ol.mapboxStyle.MapboxVectorLayer({
-            styleUrl: 'mapbox://styles/maria-adsb/cmf15lpkl000k01sgeme933sk',
+            styleUrl: 'mapbox://styles/maria-adsb/cmf15lpkl000k01sgeme933sk/draft',
             accessToken: MapboxAPIKey,
             properties: {
                 name: 'mapbox_satellite',
