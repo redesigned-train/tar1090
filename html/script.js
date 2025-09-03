@@ -3984,7 +3984,7 @@ function refreshFeatures() {
         cols.route = {
             sort: function () { sortBy('route', compareAlpha, function(x) { return x.routeString }); },
             value: function(plane) {
-                if (useRouteAPI) {
+                if (useRouteAPI && plane.routeString) {
                     return '<span title="' + g.route_cities[plane.name] + '">' + plane.routeString + '</span>';
                 } else {
                     return plane.routeString;
