@@ -3983,8 +3983,12 @@ function refreshFeatures() {
     if (routeApiUrl) {
         cols.route = {
             sort: function () { sortBy('route', compareAlpha, function(x) { return x.routeString }); },
-            value: function(plane) {
-                return ((useRouteAPI && plane.routeString) || '');
+            html: function(plane) {
+                if (useRouteAPI) {
+                    return '<p title="' + g.route_cities[plane.name] + '">' + plane.routeString + '</p>';
+                } else {
+                    return '';
+                }
             },
             text: 'Route' };
     }
