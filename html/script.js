@@ -3991,7 +3991,7 @@ function refreshFeatures() {
                     return '';
                 }
             },
-            html: useRouteAPI,
+            html: true,
             text: 'Route' };
     }
     cols.registration = {
@@ -5444,6 +5444,14 @@ function initFilters() {
         name: 'registration',
         table: 'filterTable3'
     });
+    if (routeApiUrl) {
+        new Filter({
+            key: 'route',
+            field: 'routeString',
+            name: 'route',
+            table: 'filterTable3'
+        });
+    }
     new Filter({
         key: 'country',
         field: 'country',
