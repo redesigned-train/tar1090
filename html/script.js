@@ -3985,9 +3985,9 @@ function refreshFeatures() {
             sort: function () { sortBy('route', compareAlpha, function(x) { return x.routeString }); },
             value: function(plane) {
                 if (useRouteAPI) {
-                    return '<p title="' + g.route_cities[plane.name] + '">' + plane.routeString + '</p>';
+                    return '<span title="' + g.route_cities[plane.name] + '">' + plane.routeString + '</span>';
                 } else {
-                    return '';
+                    return plane.routeString;
                 }
             },
             html: useRouteAPI,
