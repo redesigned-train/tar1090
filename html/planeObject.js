@@ -2929,6 +2929,7 @@ function routeDoLookup(currentTime) {
                         continue;
                     }
                     let codes = "";
+                    let cities = "";
 
                     for (let airport of route._airports) {
                         if (codes) {
@@ -2937,6 +2938,8 @@ function routeDoLookup(currentTime) {
                             } else {
                                 codes += " - "
                             }
+
+                            cities += " - ";
                         }
                         let aString = ""
                         for (let type of routeDisplay) {
@@ -2951,6 +2954,7 @@ function routeDoLookup(currentTime) {
                                 aString += airport.location;
                             }
                         }
+                        cities += airport.location;
                         codes += aString;
                     }
 
