@@ -8,6 +8,7 @@
 g.planes        = {};
 g.planesOrdered = [];
 g.route_cache = [];
+g.route_cities = [];
 g.route_check_array = [];
 g.route_check_in_flight = false;
 g.route_cache_timer = new Date().getTime() / 1000 + 1; // one second from now
@@ -3544,6 +3545,7 @@ function refreshSelected() {
     if (useRouteAPI) {
         if (selected.routeString) {
             jQuery('#selected_route').updateText(selected.routeString);
+            jQuery('#selected_route').attr('title', g.route_cities[selected.name]);
         } else {
             jQuery('#selected_route').updateText('n/a');
         }
