@@ -3984,10 +3984,11 @@ function refreshFeatures() {
         cols.route = {
             sort: function () { sortBy('route', compareAlpha, function(x) { return x.routeString }); },
             value: function(plane) {
-                if (useRouteAPI && plane.routeString) {
+                if (!useRouteAPI) return '';
+                if (plane.routeString) {
                     return '<span title="' + g.route_cities[plane.name] + '">' + plane.routeString + '</span>';
                 } else {
-                    return plane.routeString;
+                    return '';
                 }
             },
             html: useRouteAPI,
