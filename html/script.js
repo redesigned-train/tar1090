@@ -3446,6 +3446,11 @@ function refreshSelected() {
             jQuery('#selected_flight_number').html('');
         }
 
+        jQuery('#selected_airline').html("<span style='font-family: monospace;' class=identSmall>" + selected.airline + "</span>");
+        if (selected.airline === null) {
+            jQuery('#selected_airline').html('');
+        }
+
         if (selected.takeoff_time) {
             jQuery('#takeoff_time').updateText(new Date(selected.takeoff_time).toLocaleTimeString());
         } else {
@@ -4564,6 +4569,7 @@ function select(plane, options) {
                 SelectedPlane.takeoff_time = data.takeoff_time;
                 SelectedPlane.standard_departure = data.standard_departure;
                 SelectedPlane.standard_arrival = data.standard_arrival;
+                SelectedPlane.airline = data.airline;
             });
         });
     }
