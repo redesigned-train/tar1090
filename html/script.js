@@ -3441,6 +3441,9 @@ function refreshSelected() {
     jQuery('#selected_callsign').html('<a href="https://flightradar24.com/' + selected.name + '" target="_blank" style="color: inherit">' + selected.name + '</a>');
 
     jQuery('#selected_flight_number').html("<span style='font-family: monospace;' class=identSmall>Flight Number:" + NBSP + selected.flight_number + "</span>");
+    if (selected.flight === null) {
+        jQuery('#selected_flight_number').html('');
+    }
 
     if (showTrace) {
         if (selected.position_time) {
