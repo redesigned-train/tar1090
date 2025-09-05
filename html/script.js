@@ -3416,7 +3416,7 @@ let somethingSelected = false;
 function refreshSelected() {
     const selected = SelectedPlane;
 
-    console.log(selected);
+    jQuery('#selected_flight_number').html = "<span style='font-family: monospace;' class=identSmall>Flight Number:" + NBSP + selected.flight_number + "</span>"
 
     if (!selected || !selected.nav_qnh) {
         jQuery('#altimeter_set_selected').prop("disabled", true);
