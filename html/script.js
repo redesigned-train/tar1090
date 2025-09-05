@@ -3445,6 +3445,24 @@ function refreshSelected() {
         jQuery('#selected_flight_number').html('');
     }
 
+    if (selected.takeoff_time) {
+        jQuery('#takeoff_time').updateText(selected.takeoff_time);
+    } else {
+        jQuery('#takeoff_time').updateText('n/a');
+    }
+
+    if (selected.standard_departure) {
+        jQuery('#departure_time').updateText(selected.standard_departure);
+    } else {
+        jQuery('#departure_time').updateText('n/a');
+    }
+
+    if (selected.standard_arrival) {
+        jQuery('#arrival_time').updateText(selected.standard_arrival);
+    } else {
+        jQuery('#arrival_time').updateText('n/a');
+    }
+
     if (showTrace) {
         if (selected.position_time) {
             const date = new Date(selected.position_time * 1000);
