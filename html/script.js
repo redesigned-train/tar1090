@@ -3416,6 +3416,8 @@ let somethingSelected = false;
 function refreshSelected() {
     const selected = SelectedPlane;
 
+    console.log(selected);
+
     if (!selected || !selected.nav_qnh) {
         jQuery('#altimeter_set_selected').prop("disabled", true);
     } else {
@@ -4534,7 +4536,10 @@ function select(plane, options) {
 
     fetch("http://localhost:8080/auxiliary/" + SelectedPlane.name).then((response) => {
         response.json().then(data => {
-            console.log(data);
+            SelectedPlane.flight_number = data.flight_number;
+            SelectedPlane.takeoff_time = data.takeoff_time;
+            SelectedPlane.standard_departure = data.standard_departure;
+            SelectedPlane.standard_arrival = data.standard_arrival;
         });
     });
 }
