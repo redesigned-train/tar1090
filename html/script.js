@@ -3416,8 +3416,6 @@ let somethingSelected = false;
 function refreshSelected() {
     const selected = SelectedPlane;
 
-    jQuery('#selected_flight_number').html = "<span style='font-family: monospace;' class=identSmall>Flight Number:" + NBSP + selected.flight_number + "</span>"
-
     if (!selected || !selected.nav_qnh) {
         jQuery('#altimeter_set_selected').prop("disabled", true);
     } else {
@@ -3441,6 +3439,8 @@ function refreshSelected() {
     refreshPhoto(selected);
 
     jQuery('#selected_callsign').html('<a href="https://flightradar24.com/' + selected.name + '" target="_blank" style="color: inherit">' + selected.name + '</a>');
+
+    jQuery('#selected_flight_number').html = "<span style='font-family: monospace;' class=identSmall>Flight Number:" + NBSP + selected.flight_number + "</span>"
 
     if (showTrace) {
         if (selected.position_time) {
