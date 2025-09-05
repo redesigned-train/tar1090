@@ -3416,8 +3416,6 @@ let somethingSelected = false;
 function refreshSelected() {
     const selected = SelectedPlane;
 
-    console.log("test");
-
     if (!selected || !selected.nav_qnh) {
         jQuery('#altimeter_set_selected').prop("disabled", true);
     } else {
@@ -4533,6 +4531,10 @@ function select(plane, options) {
     } else {
         toggleFollow(false);
     }
+
+    const auxResponse = fetch("http://localhost:8080/auxiliary/" + SelectedPlane.name).then((response) => {
+        console.log(auxResponse);
+    });
 }
 
 function selectPlaneByHex(hex, options) {

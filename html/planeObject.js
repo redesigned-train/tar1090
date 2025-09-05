@@ -136,6 +136,11 @@ PlaneObject.prototype.setNull = function() {
     this.msgs978   = 0;
     this.messageRate = 0;
     this.messageRateOld = 0;
+
+    this.flight_number = null;
+    this.takeoff_time = null;
+    this.standard_departure = null;
+    this.standard_arrival = null;
 };
 
 function planeCloneState(target, source) {
@@ -197,6 +202,11 @@ function planeCloneState(target, source) {
     target.msgs978 = source.msgs978;
     target.messageRate = source.messageRate;
     target.messageRateOld = source.messageRateOld;
+
+    target.flight_number = source.flight_number;
+    target.takeoff_time = source.takeoff_time;
+    target.standard_arrival = source.standard_arrival;
+    target.standard_departure = source.standard_departure;
 };
 
 
