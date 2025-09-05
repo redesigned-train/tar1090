@@ -3446,19 +3446,19 @@ function refreshSelected() {
     }
 
     if (selected.takeoff_time) {
-        jQuery('#takeoff_time').updateText(new Date(selected.takeoff_time + 'Z').toLocaleTimeString());
+        jQuery('#takeoff_time').updateText(new Date(selected.takeoff_time).toLocaleTimeString());
     } else {
         jQuery('#takeoff_time').updateText('n/a');
     }
 
     if (selected.standard_departure) {
-        jQuery('#departure_time').updateText(new Date(selected.standard_departure + 'Z').toLocaleTimeString());
+        jQuery('#departure_time').updateText(new Date(selected.standard_departure).toLocaleTimeString());
     } else {
         jQuery('#departure_time').updateText('n/a');
     }
 
     if (selected.standard_arrival) {
-        jQuery('#arrival_time').updateText(new Date(selected.standard_arrival + 'Z').toLocaleTimeString());
+        jQuery('#arrival_time').updateText(new Date(selected.standard_arrival).toLocaleTimeString());
     } else {
         jQuery('#arrival_time').updateText('n/a');
     }
