@@ -3440,27 +3440,29 @@ function refreshSelected() {
 
     jQuery('#selected_callsign').html('<a href="https://flightradar24.com/' + selected.name + '" target="_blank" style="color: inherit">' + selected.name + '</a>');
 
-    jQuery('#selected_flight_number').html("<span style='font-family: monospace;' class=identSmall>Flight Number:" + NBSP + selected.flight_number + "</span>");
-    if (selected.flight_number === null) {
-        jQuery('#selected_flight_number').html('');
-    }
+    if (auxiliaryApiUrl) {
+        jQuery('#selected_flight_number').html("<span style='font-family: monospace;' class=identSmall>Flight Number:" + NBSP + selected.flight_number + "</span>");
+        if (selected.flight_number === null) {
+            jQuery('#selected_flight_number').html('');
+        }
 
-    if (selected.takeoff_time) {
-        jQuery('#takeoff_time').updateText(new Date(selected.takeoff_time).toLocaleTimeString());
-    } else {
-        jQuery('#takeoff_time').updateText('n/a');
-    }
+        if (selected.takeoff_time) {
+            jQuery('#takeoff_time').updateText(new Date(selected.takeoff_time).toLocaleTimeString());
+        } else {
+            jQuery('#takeoff_time').updateText('n/a');
+        }
 
-    if (selected.standard_departure) {
-        jQuery('#departure_time').updateText(new Date(selected.standard_departure).toLocaleTimeString());
-    } else {
-        jQuery('#departure_time').updateText('n/a');
-    }
+        if (selected.standard_departure) {
+            jQuery('#departure_time').updateText(new Date(selected.standard_departure).toLocaleTimeString());
+        } else {
+            jQuery('#departure_time').updateText('n/a');
+        }
 
-    if (selected.standard_arrival) {
-        jQuery('#arrival_time').updateText(new Date(selected.standard_arrival).toLocaleTimeString());
-    } else {
-        jQuery('#arrival_time').updateText('n/a');
+        if (selected.standard_arrival) {
+            jQuery('#arrival_time').updateText(new Date(selected.standard_arrival).toLocaleTimeString());
+        } else {
+            jQuery('#arrival_time').updateText('n/a');
+        }
     }
 
     if (showTrace) {
@@ -4555,14 +4557,16 @@ function select(plane, options) {
         toggleFollow(false);
     }
 
-    fetch("http://localhost:8080/auxiliary/" + SelectedPlane.name).then((response) => {
-        response.json().then(data => {
-            SelectedPlane.flight_number = data.flight_number;
-            SelectedPlane.takeoff_time = data.takeoff_time;
-            SelectedPlane.standard_departure = data.standard_departure;
-            SelectedPlane.standard_arrival = data.standard_arrival;
+    if (auxiliaryApiUrl) {
+        fetch(auxiliaryApiUrl + SelectedPlane.name).then((response) => {
+            response.json().then(data => {
+                SelectedPlane.flight_number = data.flight_number;
+                SelectedPlane.takeoff_time = data.takeoff_time;
+                SelectedPlane.standard_departure = data.standard_departure;
+                SelectedPlane.standard_arrival = data.standard_arrival;
+            });
         });
-    });
+    }
 }
 
 function selectPlaneByHex(hex, options) {
