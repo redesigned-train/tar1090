@@ -4532,8 +4532,8 @@ function select(plane, options) {
         toggleFollow(false);
     }
 
-    const auxResponse = fetch("http://localhost:8080/auxiliary/" + SelectedPlane.name).then((response) => {
-        console.log(auxResponse);
+    fetch("http://localhost:8080/auxiliary/" + SelectedPlane.name).then((response) => {
+        console.log(response);
     });
 }
 
