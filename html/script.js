@@ -4533,7 +4533,7 @@ function select(plane, options) {
     }
 
     fetch("http://localhost:8080/auxiliary/" + SelectedPlane.name).then((response) => {
-        console.log(response);
+        console.log(response.json());
     });
 }
 
